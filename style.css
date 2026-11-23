@@ -1,0 +1,71 @@
+h2 {
+    font-family: cursive !important;
+    font-variant: small-caps !important;
+    font-stretch: condensed !important;
+}
+
+label {
+    font-family: Courier !important;
+    font-weight: 500 !important;
+}
+
+legend {
+    font-family: "Lucida Sans Regular" !important;
+     font-weight: 800 !important;
+}   
+
+option {
+    font-family: Times !important;
+    font-stretch: semi-expanded !important ;
+}
+
+textarea {
+    font-family:  "Courier New" !important;
+    font-size-adjust: 0.5 !important;
+    white-space: pre !important;
+}
+
+fieldset {
+    font-style: normal !important;
+    font-stretch: expanded !important;
+
+}
+
+input {
+    font: menu !important;
+}
+
+[id^="op-"] {
+    text-transform: capitalize !important;
+}
+
+#phone {
+    letter-spacing: 2px !important;
+}
+
+#ageValue {
+    text-decoration: underline !important;
+}
+
+#docs {
+    text-indent: 5% !important;
+}
+
+@page {
+    size: landscape;
+    marks: none;
+}
+
+@media print {
+    fieldset {
+        page-break-before: always;
+        widows: 1
+    }
+    h2 {
+        page-break-inside: avoid;
+    }
+    legend {
+        orphans: 3
+    }
+}
+

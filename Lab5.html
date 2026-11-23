@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Коломоєць Данііл Олегович"/> 
+        <meta name="description" content="Новини сайту для продажу цигарок"/>
+        <meta name="keywords" content="магазин, продаж, цигарки"/>
+        <link rel="stylesheet" href="style.css">
+        <title>"Smoky Way | Форма "</title>
+</head>
+<header>
+
+</header>
+
+<body style ="background-color: #f0e68c">
+    <table  width="60%" align="center" cellpadding="5" cellspacing="0" style="background-color: rgb(255, 255, 255); border: 2px  solid black; height: 600px;">
+        <tr>
+            <td>
+                <h2 align="center" style="font-family: Arial, Helvetica, sans-serif; font-style: italic;">Форма замовлення</h2>
+                <form id="order-form" novalidate enctype="multipart/form-data" action="#" accept="image/*"
+                style="font-family: Arial, Helvetica, sans-serif;" method="post" accept-charset="UTF-8">  
+                <fieldset id="field-1" dir="ltr" style="font-style: italic;">
+                    <legend>Верифікація віку та контактні дані</legend>
+                    <label for="age">Вкажіть ваш вік</label><br>
+                    <input id="age" type="range" title="Вкажіть ваш вік" min="18" max="100"
+                    oninput="ageValue.value = this.value" list="age-markers" value="18" > 
+                    <datalist id="age-markers" class="slider-marks" title="Шкала віку">
+                        <option value="18" label="18"></option>
+                        <option value="21" label="21"></option>
+                        <option value="30" label="30"></option>
+                        <option value="50" label="50"></option>
+                    </datalist>
+                    <br>
+                    <output id="ageValue">18</output> років
+                    <br>
+                    <label for="docs">Завантажте фото документів для перевірки віку:</label>
+                    <input type="file" id="docs" name="docs" multiple title="Оберіть один або кілька файлів">
+                    <br>
+                    <label for="phone">Вкажіть ваш номер телефону</label><br>
+                    <input id="phone" type="tel" dir="ltr" maxlength="15" title="Номер телефону" name="phone">
+                    <br>
+                    <label for="password">Вкажіть ваш пароль</label><br>
+                    <input id="password" type="password" dir="ltr" maxlength="20" title="Пароль" name="password">
+                    <br>
+                    <input id="order-source" type="hidden" name="order_source" value="online_store">
+                </fieldset>
+                <fieldset id="field-2" dir="ltr" style="font-style: italic;">
+                    <legend>Вибір товару</legend>
+                    <select id="product" name="product" title="Вибір товару"
+                     required style="font-family: Georgia, 'Times New Roman', Times, serif;" form="order-form" autofocus
+                     onchange="strengthMeter.value = this.value">
+                        <option id="op-d" disabled lang="en" >-- Оберіть товар --</option>
+                        <option id="op-1" lang="en" value="3" style="font-family: Georgia, 'Times New Roman', Times, serif;" selected >Malboro </option>
+                        <option id="op-2" lang="en"  value="4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Camel</option>
+                        <option id="op-3" lang="en"  value="2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Winston Blue</option>
+                        <option id="op-4" lang="en"  value="2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Rothmans Blue</option>
+                    </select>
+                    <br>
+                    <label for="strengthMeter">Міцність</label><br>
+                    <meter id="strengthMeter" min="1" max="5" value="4" low="2" high="5" optimum="1" > </meter>
+                    <br>
+                    <label for="quantity">Вкажіть кількість товару</label><br>
+                    <input type="number" min="1" max="5" value="1" id="quantity" name="quantity" title="Вкажіть кількість товару" style="width: 50px;" required>
+                    <br>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <label for="progress" >Вже половина!</label><br>
+                        <progress id="progress" value="50" max="100" style="width: 250px; height: 20px;" title="Прогрес замовлення"></progress>
+                    </div>
+                </fieldset>
+                <fieldset id="field-3" dir="ltr" style="font-style: italic;">
+                    <legend>Спосіб оплати та доставка</legend>
+                    <input type="radio" id="ukrp-delivery" name="delivery" value="ukrp-delivery">
+                    <label for="ukrp-delivery">Укрпошта</label>
+                    <input type="radio" id="np-delivery" name="delivery" value="np-delivery">
+                    <label for="np-delivery">Нова пошта</label>
+                    <br>
+                    <input type="radio" id="pay-cash" name="payment" value="cash" checked>
+                    <label for="pay-cash">Готівкою при отриманні</label>
+                    <input type="radio" id="pay-card" name="payment" value="card" >
+                    <label for="pay-card">Картою</label>
+                </fieldset>
+                <fieldset id="field-4" dir="ltr" style="font-style: italic;">
+                    <legend>Коментар до замовлення</legend>
+                    <textarea id="order-comment" name="comment" rows="5" cols="50" placeholder="Введіть коментар" title="Поле для коментарів" wrap="soft" autofocus></textarea> 
+                </fieldset>
+                <details>
+                <summary align="center" style="font-style: italic;" dir="ltr" title="Підсумок замовлення">Підсумок замовлення</summary>
+                <p style="font-style: italic;" >Вартість доставки розраховується за тарифами перевізника. Термін доставки: 1–2 дні.</p>
+                <input type="button" value="Розрахувати вартість">
+                </details>
+                <p align="center"><input type="reset" value="Очистити форму" title="Кнопка очищення форми"></p>
+                <p align="center"><button form="order-form" formmethod="post" value="draft" disabled>Зберегти чернетку</button></p>
+                <p align="center"><input type="image" src="Submit_button.png" alt="Відправити форму" height="50px" formaction="#" formtarget="_blank"></p>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
